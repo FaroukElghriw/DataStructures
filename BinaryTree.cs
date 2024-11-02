@@ -49,7 +49,56 @@ namespace DataStructures
 
     
 		}
+		public int Height()
+		{
+			return InteralHeight(Root);
+		}
+		int InteralHeight(TreeNode node)
+		{
+			if(node == null) return 0;
+			return 1 + Math.Max(InteralHeight(node.Left), InteralHeight(node.Right));
+		}
 
+		public void PreOrderTraversal()
+		{
+			InteralPreOrderTraveral(Root);
+            Console.WriteLine();
+        }
+		void InteralPreOrderTraveral(TreeNode node)
+		{
+			if (node == null) return;
+			Console.Write($"{node.Data} => ");
+			InteralPreOrderTraveral(node.Left);
+			InteralPreOrderTraveral (node.Right);
+			
+		}
+		public void InOrderTraversal()
+		{
+			InteralInOrderTraveral(Root);
+			Console.WriteLine();
+		}
+		void InteralInOrderTraveral(TreeNode node)
+		{
+			if (node == null) return;
+			InteralInOrderTraveral(node.Left);
+			Console.Write($"{node.Data} => ");
+			InteralInOrderTraveral(node.Right);
+
+		}
+
+		public void PostOrderTravsel()
+		{
+			InteralPostOrderTraveral(Root);
+			Console.WriteLine();
+		}
+		void InteralPostOrderTraveral(TreeNode node)
+		{
+			if (node == null) return;
+			InteralPostOrderTraveral(node.Left);
+			InteralPostOrderTraveral(node.Right);
+			Console.Write($"{node.Data} => ");
+
+		}
 		public class TreeNode
 		{
 			public TData Data;

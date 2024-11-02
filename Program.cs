@@ -152,7 +152,10 @@ namespace DataStructures
 			tree.BreadthFirstInsertion('H');
 			tree.BreadthFirstInsertion('I');
 			tree.Print();
-
+			Console.WriteLine($"Height : {tree.Height()}");
+			tree.PreOrderTraversal();
+			tree.InOrderTraversal();
+			tree.PostOrderTravsel();
 			#endregion
 		}
 	}
